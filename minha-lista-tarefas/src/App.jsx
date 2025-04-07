@@ -5,7 +5,7 @@ import './App.css';
 function app () {
   return (
     <>
-      <h1> Gerenciador de Tarefas </h1>
+      <h1 className="title"> Gerenciador de Tarefas </h1>
     <ListaTarefas />
     </>
   );

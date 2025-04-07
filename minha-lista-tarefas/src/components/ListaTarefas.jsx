@@ -19,7 +19,8 @@ function ListaTarefas(){
     };
     return (
         <div>
-            <h1>Lista de Tarefas</h1>
+            <h1 className='subtitle'>Lista de Tarefas</h1>
+            <div className='teste'> 
             <input
                 type="text"
                 value={novaTarefa}
@@ -27,6 +28,7 @@ function ListaTarefas(){
                 placeholder="Digite uma nova tarefa"
             />
             <button onClick={adicionarTarefa}>Adicionar</button>
+            </div>
             <ul>
                 {tarefas.map((tarefa, indice) => (
                     <li key={indice}>
