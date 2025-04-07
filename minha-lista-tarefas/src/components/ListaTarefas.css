@@ -24,11 +24,13 @@ input {
     border-radius: 8px;
     border: 1px solid lightseagreen;
     font-size: 1em;
-    font-family: inherit;
-    
-     
+    font-family: inherit;       
 }
-
+input:after{
+    cursor: pointer;
+    transition: border-color 0.30s ease-in-out;  
+    border: 0.1em solid lightseagreen;
+}
 ul{
     color: black;
     border: 0.1em solid lightseagreen;
