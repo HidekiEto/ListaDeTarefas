@@ -26,6 +26,12 @@ input {
     font-size: 1em;
     font-family: inherit;       
 }
+input:focus {
+    outline: none;
+    border: 0.1em solid lightseagreen;
+    box-shadow: 0 0 5px #000, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000,
+        0 0 25px #000, 0 0 30px #000, 0 0 35px #000;
+}
 
 ul{
     color: black;
@@ -67,4 +73,15 @@ input.checkbox:checked{
     border-radius: 50%;
     box-shadow: 0 0 5px green, 0 0 10px #000, 0 0 15px #000, 0 0 20px #000,
         0 0 25px #000, 0 0 30px #000, 0 0 35px #000;
+}
+
+button.ordenar {
+    color: solid lightseagreen;
+    background-color: transparent;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    width: 10em;
+    margin-left: 11em;
+
 }
