@@ -24,4 +24,8 @@ Siga as instruções abaixo para baixar ou clonar o projeto em uma máquina loca
 
    npm install
 
-   npm run dev
+   npm run 
+   
+## Link do vídeo explicativo
+
+   https://youtu.be/MwKXRJThcG0
