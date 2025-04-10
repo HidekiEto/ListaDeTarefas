@@ -1,12 +1,27 @@
-# React + Vite
+# Minha Lista de Tarefas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Sobre o projeto
 
-Currently, two official plugins are available:
+Minha Lista de Tarefas é uma aplicação simples de gerenciamento de tarefas desenvolvida em React. O objetivo do projeto é permitir que os usuários adicionem, removam, ordenem e visualizem suas tarefas de forma prática e intuitiva. As tarefas são armazenadas no `localStorage` do navegador, garantindo que elas permaneçam salvas mesmo após recarregar a página.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Adicionar novas tarefas.
+- Remover tarefas existentes.
+- Ordenar tarefas em ordem alfabética.
+- Persistência de dados utilizando o `localStorage`.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Como baixar ou clonar o projeto
+
+Siga as instruções abaixo para baixar ou clonar o projeto em uma máquina local:
+
+1. Certifique-se de ter o [Git](https://git-scm.com/) e o [Node.js](https://nodejs.org/) instalados em sua máquina.
+2. Abra o terminal e execute o seguinte comando para clonar o repositório:
+   ```bash
+   https://github.com/HidekiEto/ListaDeTarefas.git
+
+   cd minha-lista-tarefas
+
+   npm install
+
+   npm run dev
