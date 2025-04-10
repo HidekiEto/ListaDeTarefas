@@ -1,19 +1,22 @@
-import { use, useState } from 'react';
-import { state } from 'react';
-
+import { useState, useEffect } from 'react';
 import './ListaTarefas.css';
 
-function ListaTarefas(){
+function ListaTarefas() {
     const [tarefas, setTarefas] = useState(() => {
         const tarefasSalvas = localStorage.getItem('tarefas');
         return tarefasSalvas ? JSON.parse(tarefasSalvas) : [];
     });
     const [novaTarefa, setNovaTarefa] = useState('');
 
+    useEffect(() => {
+        if (tarefas.length > 0) {
+            localStorage.setItem('tarefas', JSON.stringify(tarefas));
+        }
+    }, [tarefas]);
+
     const adicionarTarefa = () => {
-        if (novaTarefa.trim() != '') {
-            const tarefasSalvas = localStorage.getItem('tarefas');
-            setTarefas([...tarefas, novaTarefa]);
+        if (novaTarefa.trim() !== '') {
+            setTarefas([...tarefas, novaTarefa.trim()]);
             setNovaTarefa('');
         }
     };
@@ -25,31 +28,35 @@ function ListaTarefas(){
     const ordenarTarefas = () => {
         const tarefasOrdenadas = [...tarefas].sort((a, b) => a.localeCompare(b));
         setTarefas(tarefasOrdenadas);
-    }
-
-    useEffect(() => {
-        localStorage.setItem('tarefas', JSON.stringify(tarefas));
-    }, [tarefas]);
+    };
 
     return (
         <div>
             <h1 className='subtitle'>Lista de Tarefas</h1>
-            <div className='teste'> 
-            <input
-                type="text"
-                value={novaTarefa}
-                onChange={(e) => setNovaTarefa(e.target.value)}
-                placeholder="Digite uma nova tarefa"
-            />
-            <button onClick={adicionarTarefa}>Adicionar</button>
-           
+            <div className='teste'>
+                <input
+                    type="text"
+                    value={novaTarefa}
+                    onChange={(e) => setNovaTarefa(e.target.value)}
+                    placeholder="Digite uma nova tarefa"
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') adicionarTarefa();
+                    }}
+                />
+                <button onClick={adicionarTarefa}>Adicionar</button>
             </div>
             <ul className='lista-tarefas'>
-                {tarefas.length === 0 && <p className='sem-tarefas'>Nenhuma tarefa adicionada.</p>}
-                {tarefas.length > 0 && <button onClick={ordenarTarefas} className='ordenar'>Ordenar</button>} 
+                {tarefas.length === 0 && (
+                    <p className='semTarefas'>Nenhuma tarefa adicionada.</p>
+                )}
+                {tarefas.length > 0 && (
+                    <button onClick={ordenarTarefas} className='ordenar'>
+                        Ordenar
+                    </button>
+                )}
                 {tarefas.map((tarefa, indice) => (
                     <li key={indice}>
-                        <input type="checkbox" className='checkbox'/>
+                        <input type="checkbox" className='checkbox' />
                         {tarefa}
                         <button onClick={() => removerTarefa(indice)}>Remover</button>
                     </li>
@@ -57,5 +64,6 @@ function ListaTarefas(){
             </ul>
         </div>
     );
-    }
+}
+
 export default ListaTarefas;
